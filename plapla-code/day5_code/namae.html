@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>名前をあてよう</title>
+
+<style 'type=text/css'>
+body {
+  text-align: center;
+}
+</style>
+
+<script>
+
+// 各クラスから４人ずつのオブジェクトデータ
+var gonen = [
+    {kumi:1, namae:'まやちゃん ',       toshi:10},
+    {kumi:1, namae:'すずかちゃん ',     toshi:11},
+    {kumi:1, namae:'けんたろうくん ',   toshi:10},
+    {kumi:1, namae:'しゅうくん ',       toshi:10},
+    {kumi:2, namae:'あすかちゃん ',     toshi:11},
+    {kumi:2, namae:'めぐみちゃん ',     toshi:10},
+    {kumi:2, namae:'ショータローくん ', toshi:10},
+    {kumi:2, namae:'たかのりくん ',     toshi:11},
+    {kumi:3, namae:'さおりちゃん ',     toshi:10},
+    {kumi:3, namae:'ゆみこちゃん ',     toshi:11},
+    {kumi:3, namae:'しょうじくん ',     toshi:10},
+    {kumi:3, namae:'つかさくん ',       toshi:11} ];
+
+var sp;        // タイマーを管理する変数
+var save  = 0; // STARTボタンを押した時の添え字番号
+var index = 0; // 配列からデータを取り出す添え字番号
+
+// 配列から添え字番号のオブジェクト取り出し
+// データを整えて返す
+function getData() {
+
+    // 配列 gonen から 指定した添え字番号のデータを取りだす
+    var seito=gonen[index];
+
+    // 文字列の変数に 組と名前をつないで入れる
+    var str = seito.kumi + '組 ' + seito.namae;
+
+    // 最後に歳を付けて返す
+    return  str + seito.toshi + '歳';
+
+}
+
+// 表示処理
+function loopup() {
+
+    // 添え字番号をひとつ進める
+    index = index + 1;
+    if (gonen.length <= index) {
+        index = 0; // 配列の最後に達したら0にもどす
+    }
+
+    // 添え字番号のデータを取りだす
+    var str = getData();
+
+    // IDが hyouji の場所に表示する
+    document.getElementById('hyouji').innerHTML = str;
+}
+
+function start() {
+    
+    // 結果が表示されていれば消す
+    document.getElementById('kekka').innerHTML = '';
+
+    // ボタンの表示状態を変える
+    document.getElementById('start').disabled = true;
+    document.getElementById('stop' ).disabled = false;
+
+    // 最初の添え字番号を決める
+    index = Math.floor(Math.random() * gonen.length);
+    
+    // 添え字番号の値を保存する
+    save = index;
+
+    // 添え字番号のデータを取りだす
+    var str = getData();
+    
+    // メッセージを表示する。
+    alert(str + '\r\nが表示されているときに STOP を押してね');
+
+    // 500ミリ秒表示間かくを空ける
+    sp=setInterval(loopup, 500);
+    
+}
+
+function stop() {
+
+    clearInterval(sp);
+
+    // ボタンの表示状態をもどす
+    document.getElementById('start').disabled = false;
+    document.getElementById('stop' ).disabled = true;
+
+    if (save  ==  index) {
+        // STARTボタンを押した時に保存した値と添え字番号が同じ場合
+        document.getElementById('kekka').innerHTML = 'ぴったりだよ！';
+    } else {
+        document.getElementById('kekka').innerHTML = 'ざんねんでした';
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+    <br> <!-- 改行 -->
+
+    <h1>名前をあてよう</h1>
+
+    <br> <!-- 改行 -->
+
+    <div id='hyouji'> STARTを押すと説明を表示するよ </div>
+
+    <br> <!-- 改行 -->
+
+    <div id='kekka'></div>
+
+    <br> <!-- 改行 -->
+
+    <input type='button' id='start' value='START' onclick='start();'>
+    <input type='button' id='stop' value='STOP' onclick='stop();' disabled>
+
+</body>
+</html>

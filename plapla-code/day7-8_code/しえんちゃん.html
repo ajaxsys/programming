@@ -1,0 +1,143 @@
+<!--------------ＨＴＭＬ５・JavaScript・CSSのプログラム------------>
+<!DOCTYPE html>
+<html lang="ja">
+<!-----------------ＨＴＭＬ５のｈｅａｄ----------->
+<head>
+     <meta charset="utf-8">
+     <title>スロットもどきっち
+     </title>
+
+<!---------------------JavaScript--------------------->
+<script>
+
+
+
+
+//scriptのプログラム全体で使える変数sp1,sp2,sp3を定義
+var sp1;        // スロット画像回転１を管理する変数sp1
+var sp2;        // スロット画像回転2を管理する変数sp2
+var sp3;        // スロット画像回転3を管理する変数sp3
+//スロット画像を回転させる関数setImage()の処理
+function setImage() {
+    var cg1=1;  // スロット１の画像を変える変数cg1
+    var cg2=0;  // スロット2の画像を変える変数cg2
+    var cg3=0;  // スロット3の画像を変える変数cg3
+    //５つの画像を変えられるように画像ファイル名を管理
+    //              0        1             2     3        4
+    // var images =["pt1.png","pt2.png","pt3.png","pt4.png","pt5.png"];
+    var images =[
+        "https://images-na.ssl-images-amazon.com/images/I/819YhtVbfaL._AC_SX466_.jpg",
+        "https://tamagotch.channel.or.jp/tamagotchi/meets/images/top/img_main_03.png",
+        "https://image.yodobashi.com/product/100/000/001/004/394/771/100000001004394771_10203_001.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/71ui8jSk-VL._SX466_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/7151THu%2BEpL._AC_SX466_.jpg"];
+
+    //スロット画像１の表示処理－－－－－－－－－－－－－－－－－
+    var loopup1=function(){
+        document.getElementById('img1').src = images[cg1];
+        cg1 = cg1 + 1;
+        // alert("cg1のなかみは" + cg1);
+        if(cg1 > 4){cg1=0}
+    }
+
+   sp1=setInterval(loopup1, 200);   // 回転速度調整
+                                    // (200ミリ秒表示間かくを空ける)
+
+                                  // (100ミリ秒表示間かくを空ける)
+
+    //スロット画像2の表示処理－－－－－－－－－－－－－－－－－
+    var loopup2=function(){
+        document.getElementById('img2').src = images[cg2];
+        cg2 = cg2 + 1;
+        // alert("cg2のなかみは" + cg2);
+        if(cg2 > 4){cg2=0}
+    }
+
+    sp2=setInterval(loopup2, 150);   // 回転速度調整
+                                    // (150ミリ秒表示間かくを空ける)
+
+
+    //スロット画像3の表示処理－－－－－－－－－－－－－－－－－
+    var loopup3=function(){
+        document.getElementById('img3').src = images[cg3];
+        cg3 = cg3 + 1;
+        // alert("cg3のなかみは" + cg3);
+        if(cg3 > 4){cg3=0}
+    }
+
+   sp3=setInterval(loopup3, 100);   // 回転速度調整
+                                    // (100ミリ秒表示間かくを空ける)
+
+} 
+//スロットのストップ処理－－－－－－－－－－－－－－－－－－－－
+function stop_slot1() {       //スロット画像１をストップ
+    clearInterval(sp1);
+}
+function stop_slot2() {       //スロット画像2をストップ
+    clearInterval(sp2);
+}
+
+function stop_slot3() {       //スロット画像3をストップ
+    clearInterval(sp3);
+}
+
+
+
+</script>
+
+<!---------------------ＣＳＳ--------------------->
+<style type="text/css">
+    p{
+         text-align: center;        /* スロットを中央に配置 */
+    }
+    input{
+         font-size:20px;            /* フォントサイズ：20ピクセル */
+         margin:10px 0px 20px 0px;  /* 外側の余白（上・右・下・左）*/
+         padding:0px 10px 0px 10px; /* 内側の余白（上・右・下・左）*/
+         border-radius:8px;         /* ボックスの角をまるめる */
+         height: 60px;
+         width: 100px;
+         
+    }
+    
+    .color1 {
+        color: blue;
+    }
+
+    .color2 {
+        color: rgb(226, 13, 198);
+    }
+    
+    .bg1 {
+        background-color: aquamarine;
+    
+    }
+    </style>
+    
+</head>
+
+<!-----------------ＨＴＭＬ５のｂｏｄｙ------------>
+<body>
+<p>
+    <!--starボタンの処理-->
+    <input type="button"  class="color2" value="開始" onClick="setImage()">
+
+    <br><br>                <!-- 改行 -->
+
+    <!--最初の画像を表示-->
+   <img height="150px" src="pt0.png" id="img1"> 
+   <img height="150px" src="pt0.png" id="img2">
+   <img height="150px" src="pt0.png" id="img3"> 
+
+    <br><br>                <!-- 改行 -->
+
+    <!--各画像のストップボタン処理-->
+    <input class="color1 bg1" type="button" value="STOP左" onClick="stop_slot1()">
+    <input class="color1 " type="button" value="STOP中" onClick="stop_slot2()">
+    <input class="color2 bg1" type="button" value="STOP右" onClick="stop_slot3()">
+
+　　
+
+</p>
+</body>
+</html>
