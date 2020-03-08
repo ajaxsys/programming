@@ -11,6 +11,7 @@
 <script>
 
 
+var したか = "まだだよ！";
 
 
 //scriptのプログラム全体で使える変数sp1,sp2,sp3を定義
@@ -19,6 +20,15 @@ var sp2;        // スロット画像回転2を管理する変数sp2
 var sp3;        // スロット画像回転3を管理する変数sp3
 //スロット画像を回転させる関数setImage()の処理
 function setImage() {
+
+
+    if (したか=="やってます") return
+
+    したか="やってます"
+
+
+
+
     var cg1=1;  // スロット１の画像を変える変数cg1
     var cg2=0;  // スロット2の画像を変える変数cg2
     var cg3=0;  // スロット3の画像を変える変数cg3
@@ -68,7 +78,7 @@ function setImage() {
    sp3=setInterval(loopup3, 100);   // 回転速度調整
                                     // (100ミリ秒表示間かくを空ける)
 
-} 
+}
 //スロットのストップ処理－－－－－－－－－－－－－－－－－－－－
 function stop_slot1() {       //スロット画像１をストップ
     clearInterval(sp1);
@@ -97,9 +107,9 @@ function stop_slot3() {       //スロット画像3をストップ
          border-radius:8px;         /* ボックスの角をまるめる */
          height: 60px;
          width: 100px;
-         
+
     }
-    
+
     .color1 {
         color: blue;
     }
@@ -107,13 +117,13 @@ function stop_slot3() {       //スロット画像3をストップ
     .color2 {
         color: rgb(226, 13, 198);
     }
-    
+
     .bg1 {
         background-color: aquamarine;
-    
+
     }
     </style>
-    
+
 </head>
 
 <!-----------------ＨＴＭＬ５のｂｏｄｙ------------>
@@ -125,9 +135,9 @@ function stop_slot3() {       //スロット画像3をストップ
     <br><br>                <!-- 改行 -->
 
     <!--最初の画像を表示-->
-   <img height="150px" src="pt0.png" id="img1"> 
+   <img height="150px" src="pt0.png" id="img1">
    <img height="150px" src="pt0.png" id="img2">
-   <img height="150px" src="pt0.png" id="img3"> 
+   <img height="150px" src="pt0.png" id="img3">
 
     <br><br>                <!-- 改行 -->
 
