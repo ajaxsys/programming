@@ -1,0 +1,59 @@
+<h3>かっこいい変換ツール</h3>
+L(デシリットル)<input id="rokku1" oninput="henkanHanHan(this, 1)"/><br>
+dL(デシリットル)<input id="rokku2" oninput="henkanHanHan(this, 2)" /><br>
+mL（ミリリットル）<input id="rokku3" oninput="henkanHanHan(this, 3)" /><br>
+
+
+
+<script>
+    function henkanHanHan(input, bango) {
+    // (input.value) 入力したもの   
+    if (bango == 1){
+        document.getElementById("rokku2").value = Number(input.value) * 10;
+        document.getElementById("rokku3").value = Number(input.value) * 1000;
+    }
+if(bango == 2){
+        document.getElementById("rokku1").value = Number(input.value) / 10;
+        document.getElementById("rokku3").value = Number(input.value) * 100;        
+    }
+if(bango == 3){
+        document.getElementById("rokku1").value = Number(input.value) / 1000;
+        document.getElementById("rokku2").value = Number(input.value) /  100;
+}
+    
+
+
+
+    }
+</script>
+
+
+
+
+
+
+
+<hr />
+「ばばのさんぷる」をいじらないで下さい。<br>
+ばばのさんぷるL <input id="baba1" oninput="henkan(this, 1)"/>  <br>
+ばばのさんぷるdL <input id="baba2" oninput="henkan(this, 2)"/>  <br>
+ばばのさんぷるmL <input id="baba3" oninput="henkan(this, 3)"/>  <br>
+
+
+<script>
+    function henkan(input, bango) {
+        // (input.value) 入力したもの
+        if (bango == 1) {
+            document.getElementById("baba2").value = Number(input.value) * 10;
+            document.getElementById("baba3").value = Number(input.value) * 1000;
+        }
+        if (bango == 2) {
+            document.getElementById("baba1").value = Number(input.value) / 10;
+            document.getElementById("baba3").value = Number(input.value) * 10;
+        }
+        if (bango == 3) {
+            document.getElementById("baba1").value = Number(input.value) / 1000;
+            document.getElementById("baba2").value = Number(input.value) / 100;
+        }
+    }
+</script>
