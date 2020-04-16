@@ -3,8 +3,13 @@
 L（リットル）　　<input id="ritto1" oninput="henkanxixi(this, 1)"/>　<br>
 dL （デシリットル）  <input id ="ritto2" oninput="henkanxixi(this, 2)"/>  <br>
 mL（ミリリットル） <input id ="ritto3" oninput="henkanxixi(this, 3)"/>  <br>
+これらは、水の量です！
+
 <br>
-どうぞ。ご自由に入力してください！
+
+どうぞ。ご自由に入力してください！<br>
+ですが、ばばのサンプルは、いじらない事。<br>
+
 
 
 
@@ -55,5 +60,45 @@ mL（ミリリットル） <input id ="ritto3" oninput="henkanxixi(this, 3)"/>  
             document.getElementById("baba1").value = Number(input.value) / 1000;
             document.getElementById("baba2").value = Number(input.value) / 100;
         }
+    }
+</script>
+
+
+<br>
+<hr>
+mm(ミリ) <input id ="xxx1" oninput="henkanxxx(this, 1)"/>  <br>
+cm(センチ) <input id ="xxx2" oninput="henkanxxx(this, 2)"/>  <br>
+m（メートル） <input id ="xxx3" oninput="henkanxxx(this, 3)"/>  <br>
+km（キロメートル） <input id ="xxx4" oninput="henkanxxx(this,4)"/>  <br>
+これらは、道すじの単位です！<br>
+<script>
+    function henkanxxx(input, bango) {
+        if (bango == 1) {
+            document.getElementById("xxx2").value =Number(input.value)/10
+            document.getElementById("xxx3").value =Number(input.value)/1000
+            document.getElementById("xxx4").value =Number(input.value)/1000000
+
+        }
+        if (bango == 2) {
+            document.getElementById("xxx1").value =Number(input.value)*10
+            document.getElementById("xxx3").value =Number(input.value)/100
+            document.getElementById("xxx4").value =Number(input.value)/100000
+
+        }
+        if (bango == 3) {
+            document.getElementById("xxx2").value =Number(input.value)*100
+            document.getElementById("xxx1").value =Number(input.value)*1000
+            document.getElementById("xxx4").value =Number(input.value)/1000
+
+        }
+
+
+        if (bango == 4) {
+            document.getElementById("xxx2").value =Number(input.value)*100000
+            document.getElementById("xxx1").value =Number(input.value)*1000000
+            document.getElementById("xxx3").value =Number(input.value)*1000
+
+        }
+        
     }
 </script>
