@@ -1,7 +1,18 @@
 <h3>かっこいい変換ツール</h3>
-L(リットル)<input id="rokku1" oninput="henkanHanHan(this, 1)"/><br>
-dL(デシリットル)<input id="rokku2" oninput="henkanHanHan(this, 2)" /><br>
-mL(ミリリットル)<input id="rokku3" oninput="henkanHanHan(this, 3)" /><br>
+<table>
+    <tr>
+        <td>L(リットル)</td>
+        <td><input id="rokku1" oninput="henkanHanHan(this, 1)"</td>
+    </tr>
+    <tr>
+        <td>dL(デシリットル)</td>
+        <td><input id="rokku2" oninput="henkanHanHan(this, 2)"</td>
+    </tr>
+    <tr>
+        <td>mL(ミリリットル)</td>
+        <td><input id="rokku3" oninput="henkanHanHan(this, 3)"</td>
+    </tr>
+</table>
 
 <!-- 関数の勉強 -->
 <script>
@@ -42,14 +53,45 @@ mL(ミリリットル)<input id="rokku3" oninput="henkanHanHan(this, 3)" /><br>
 
 
 
+<hr>
+ばばのテーブル
+<table>
+    <tr>
+        <td>mm(ミリメートル)</td>
+        <td><input/></td>
+    </tr>
+    <tr>
+        <td>名前</td>
+        <td><input type="text"></td>
+    </tr>
+    <tr>
+        <td>パスワード</td>
+        <td><input type="text"></td>
+    </tr>
+</table>
 
 
 
 <hr />
-mm(ミリメートル)<input id="BBB1" oninput="henkanBBB(this, 1)"/><br>
-cm(センチメートル)<input id="BBB2" oninput="henkanBBB(this, 2)"/><br>
-m(メートル)<input id="BBB3" oninput="henkanBBB(this, 3)"/><br>
-km(キロメートル)<input id="BBB4" oninput="henkanBBB(this, 4)"/><br>
+<table>
+    <tr>
+        <td>mm(ミリメートル)</td>
+        <td><input id="BBB1" oninput="henkanBBB(this, 1)"</td>
+   </tr>
+   <tr>
+        <td>cm(センチメートル)</td>
+        <td><input id="BBB2" oninput="henkanBBB(this, 2)"</td>
+   </tr>
+   <tr>
+       <td>m(メートル)</td>
+       <td><input id="BBB3" oninput="henkanBBB(this, 3)"</td>
+   </tr>
+   <tr>
+       <td>km(キロメートル)</td>
+       <td><input id="BBB4" oninput="henkanBBB(this, 4)"</td>
+   </tr>
+</table>
+
 
 <script>
     function henkanBBB(input, bango) {
