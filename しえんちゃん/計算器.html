@@ -1,26 +1,26 @@
 <h3>かっこいい変換ツール</h3>
-L(デシリットル)<input id="rokku1" oninput="henkanHanHan(this, 1)"/><br>
+L(リットル)<input id="rokku1" oninput="henkanHanHan(this, 1)"/><br>
 dL(デシリットル)<input id="rokku2" oninput="henkanHanHan(this, 2)" /><br>
-mL（ミリリットル）<input id="rokku3" oninput="henkanHanHan(this, 3)" /><br>
+mL(ミリリットル)<input id="rokku3" oninput="henkanHanHan(this, 3)" /><br>
 
 
 
 <script>
     function henkanHanHan(input, bango) {
-    // (input.value) 入力したもの   
+    // (input.value) 入力したもの
     if (bango == 1){
         document.getElementById("rokku2").value = Number(input.value) * 10;
         document.getElementById("rokku3").value = Number(input.value) * 1000;
     }
 if(bango == 2){
         document.getElementById("rokku1").value = Number(input.value) / 10;
-        document.getElementById("rokku3").value = Number(input.value) * 100;        
+        document.getElementById("rokku3").value = Number(input.value) * 100;
     }
 if(bango == 3){
         document.getElementById("rokku1").value = Number(input.value) / 1000;
         document.getElementById("rokku2").value = Number(input.value) /  100;
 }
-    
+
 
 
 
@@ -57,3 +57,52 @@ if(bango == 3){
         }
     }
 </script>
+
+<hr />
+mm(ミリメートル)<input id="BBB1" oninput="henkanBBB(this, 1)"/><br>
+cm(センチメートル)<input id="BBB2" oninput="henkanBBB(this, 2)"/><br>
+m(メートル)<input id="BBB3" oninput="henkanBBB(this, 3)"/><br>
+km(キロメートル)<input id="BBB4" oninput="henkanBBB(this, 4)"/><br>
+
+<script>
+    function henkanBBB(input, bango) {
+    // (input.value) 入力したもの
+    if (bango == 1){
+        document.getElementById("BBB2").value = Number(input.value) / 10;
+        document.getElementById("BBB3").value = Number(input.value) / 1000;
+        document.getElementById("BBB4").value = Number(input.value) / 1000000;
+    }
+if(bango == 2){
+        document.getElementById("BBB1").value = Number(input.value) * 10;
+        document.getElementById("BBB3").value = Number(input.value) / 100;
+        document.getElementById("BBB4").value = Number(input.value) / 100000;
+    }
+if(bango == 3){
+        document.getElementById("BBB1").value = Number(input.value) * 1000;
+        document.getElementById("BBB2").value = Number(input.value) * 100;
+        document.getElementById("BBB4").value = Number(input.value) / 1000;
+    }
+if(bango == 4){
+        document.getElementById("BBB1").value = Number(input.value) * 1000000;
+        document.getElementById("BBB2").value = Number(input.value) * 100000;
+        document.getElementById("BBB3").value = Number(input.value) * 1000;
+    }
+
+
+
+
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
