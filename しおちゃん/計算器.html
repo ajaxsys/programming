@@ -1,17 +1,25 @@
 
 <h1>かっこいい変換ツール</h1>
-L（リットル）　　<input id="ritto1" oninput="henkanxixi(this, 1)"/>　<br>
-dL （デシリットル）  <input id ="ritto2" oninput="henkanxixi(this, 2)"/>  <br>
-mL（ミリリットル） <input id ="ritto3" oninput="henkanxixi(this, 3)"/>  <br>
 これらは、水の量です！
 
+
+<table>
+    <tr>
+        <td>L（リットル）</td>
+        <td><input id="ritto1" oninput="henkanxixi(this, 1)"/></td>
+    </tr>
+    <tr>　
+        <td>dL （デシリットル）</td>
+        <td> <input id ="ritto2" oninput="henkanxixi(this, 2)"/></td>
+    </tr>
+    <td>mL（ミリリットル）</td>
+    <td><input id ="ritto3" oninput="henkanxixi(this, 3)"/></td>
+    </tr>
+</table>
+ß
 <br>
 
 どうぞ。ご自由に入力してください！<br>
-ですが、ばばのサンプルは、いじらない事。<br>
-
-
-
 
 <script>
     function henkanxixi(input, bango) {
@@ -33,43 +41,29 @@ mL（ミリリットル） <input id ="ritto3" oninput="henkanxixi(this, 3)"/>  
 
 
 </script>
-
-
-
-
-
 <hr />
-
-ばばのサンプルL <input id="baba1" oninput="henkan(this, 1)" />  <br>
-ばばのサンプルdL <input id="baba2" oninput="henkan(this, 2)"/>  <br>
-ばばのサンプルmL <input id="baba3" oninput="henkan(this, 3)"/>  <br>
-
-
-<script>
-    function henkan(input, bango) {
-        // (input.value) 入力したもの
-        if (bango == 1) {
-            document.getElementById("baba2").value = Number(input.value) * 10;
-            document.getElementById("baba3").value = Number(input.value) * 1000;
-        }
-        if (bango == 2) {
-            document.getElementById("baba1").value = Number(input.value) / 10;
-            document.getElementById("baba3").value = Number(input.value) * 10;
-        }
-        if (bango == 3) {
-            document.getElementById("baba1").value = Number(input.value) / 1000;
-            document.getElementById("baba2").value = Number(input.value) / 100;
-        }
-    }
-</script>
-
-
 <br>
 <hr>
-mm(ミリ) <input id ="xxx1" oninput="henkanxxx(this, 1)"/>  <br>
-cm(センチ) <input id ="xxx2" oninput="henkanxxx(this, 2)"/>  <br>
-m（メートル） <input id ="xxx3" oninput="henkanxxx(this, 3)"/>  <br>
-km（キロメートル） <input id ="xxx4" oninput="henkanxxx(this,4)"/>  <br>
+<table>
+    <tr>
+<td>mm(ミリ)</td>
+<td><input id ="xxx1" oninput="henkanxxx(this, 1)"/></td>
+    </tr>
+    <tr></tr>
+<td>cm(センチ)</td>
+<td><input id ="xxx2" oninput="henkanxxx(this, 2)"/></td>
+    </tr>
+<td>m（メートル）</td>
+<td><input id ="xxx3" oninput="henkanxxx(this, 3)"/>
+    </tr>
+    <tr>
+<td>km（キロメートル）</td>
+<td><input id ="xxx4" oninput="henkanxxx(this,4)"/></td>
+    </tr>
+
+</table>
+
+
 これらは、道すじの単位です！<br>
 <script>
     function henkanxxx(input, bango) {
@@ -99,6 +93,6 @@ km（キロメートル） <input id ="xxx4" oninput="henkanxxx(this,4)"/>  <br>
             document.getElementById("xxx3").value =Number(input.value)*1000
 
         }
-        
+
     }
 </script>
