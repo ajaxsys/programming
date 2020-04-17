@@ -1,96 +1,121 @@
 <h3>かっこいい変換ツール</h3>
-L(リットル)<input id="rokku1" oninput="henkanHanHan(this, 1)"/><br>
-dL(デシリットル)<input id="rokku2" oninput="henkanHanHan(this, 2)" /><br>
-mL(ミリリットル)<input id="rokku3" oninput="henkanHanHan(this, 3)" /><br>
+<table>
+    <tr>
+        <td>L(リットル)</td>
+        <td><input id="rokku1" oninput="henkanHanHan(this, 1)"</td>
+    </tr>
+    <tr>
+        <td>dL(デシリットル)</td>
+        <td><input id="rokku2" oninput="henkanHanHan(this, 2)"</td>
+    </tr>
+    <tr>
+        <td>mL(ミリリットル)</td>
+        <td><input id="rokku3" oninput="henkanHanHan(this, 3)"</td>
+    </tr>
+</table>
 
+<!-- 関数の勉強 -->
+<script>
+    // 関数とは、計算のまとめ
+    // 自分の名前：足し算
+    // 入り口(括弧の中身)：一番目の数字, 二番目の数字
+    // 出口（戻り値 return）：結果
+    function 変な足し算(一番目の数字, 二番目の数字) {
+        var 結果 = 一番目の数字 + 二番目の数字
+        結果 = 結果 * 1.1
+        // 結果 = 結果 + 10
+        return 結果;
+    }
+
+    // alert(変な足し算(1,2));
+</script>
 
 
 <script>
     function henkanHanHan(input, bango) {
     // (input.value) 入力したもの
-    if (bango == 1){
-        document.getElementById("rokku2").value = Number(input.value) * 10;
-        document.getElementById("rokku3").value = Number(input.value) * 1000;
-    }
-if(bango == 2){
-        document.getElementById("rokku1").value = Number(input.value) / 10;
-        document.getElementById("rokku3").value = Number(input.value) * 100;
-    }
-if(bango == 3){
-        document.getElementById("rokku1").value = Number(input.value) / 1000;
-        document.getElementById("rokku2").value = Number(input.value) /  100;
-}
-
-
-
-
-    }
-</script>
-
-
-
-
-
-
-
-<hr />
-「ばばのさんぷる」をいじらないで下さい。<br>
-ばばのさんぷるL <input id="baba1" oninput="henkan(this, 1)"/>  <br>
-ばばのさんぷるdL <input id="baba2" oninput="henkan(this, 2)"/>  <br>
-ばばのさんぷるmL <input id="baba3" oninput="henkan(this, 3)"/>  <br>
-
-
-<script>
-    function henkan(input, bango) {
-        // (input.value) 入力したもの
-        if (bango == 1) {
-            document.getElementById("baba2").value = Number(input.value) * 10;
-            document.getElementById("baba3").value = Number(input.value) * 1000;
+        if (bango == 1){
+            document.getElementById("rokku2").value = Number(input.value) * 10;
+            document.getElementById("rokku3").value = Number(input.value) * 1000;
         }
-        if (bango == 2) {
-            document.getElementById("baba1").value = Number(input.value) / 10;
-            document.getElementById("baba3").value = Number(input.value) * 10;
+        if(bango == 2){
+            document.getElementById("rokku1").value = Number(input.value) / 10;
+            document.getElementById("rokku3").value = Number(input.value) * 100;
         }
-        if (bango == 3) {
-            document.getElementById("baba1").value = Number(input.value) / 1000;
-            document.getElementById("baba2").value = Number(input.value) / 100;
+        if(bango == 3){
+            document.getElementById("rokku1").value = Number(input.value) / 1000;
+            document.getElementById("rokku2").value = Number(input.value) /  100;
         }
     }
 </script>
 
+
+
+
+
+<hr>
+ばばのテーブル
+<table>
+    <tr>
+        <td>mm(ミリメートル)</td>
+        <td><input/></td>
+    </tr>
+    <tr>
+        <td>名前</td>
+        <td><input type="text"></td>
+    </tr>
+    <tr>
+        <td>パスワード</td>
+        <td><input type="text"></td>
+    </tr>
+</table>
+
+
+
 <hr />
-mm(ミリメートル)<input id="BBB1" oninput="henkanBBB(this, 1)"/><br>
-cm(センチメートル)<input id="BBB2" oninput="henkanBBB(this, 2)"/><br>
-m(メートル)<input id="BBB3" oninput="henkanBBB(this, 3)"/><br>
-km(キロメートル)<input id="BBB4" oninput="henkanBBB(this, 4)"/><br>
+<table>
+    <tr>
+        <td>mm(ミリメートル)</td>
+        <td><input id="BBB1" oninput="henkanBBB(this, 1)"</td>
+   </tr>
+   <tr>
+        <td>cm(センチメートル)</td>
+        <td><input id="BBB2" oninput="henkanBBB(this, 2)"</td>
+   </tr>
+   <tr>
+       <td>m(メートル)</td>
+       <td><input id="BBB3" oninput="henkanBBB(this, 3)"</td>
+   </tr>
+   <tr>
+       <td>km(キロメートル)</td>
+       <td><input id="BBB4" oninput="henkanBBB(this, 4)"</td>
+   </tr>
+</table>
+
 
 <script>
     function henkanBBB(input, bango) {
-    // (input.value) 入力したもの
-    if (bango == 1){
-        document.getElementById("BBB2").value = Number(input.value) / 10;
-        document.getElementById("BBB3").value = Number(input.value) / 1000;
-        document.getElementById("BBB4").value = Number(input.value) / 1000000;
-    }
-if(bango == 2){
-        document.getElementById("BBB1").value = Number(input.value) * 10;
-        document.getElementById("BBB3").value = Number(input.value) / 100;
-        document.getElementById("BBB4").value = Number(input.value) / 100000;
-    }
-if(bango == 3){
-        document.getElementById("BBB1").value = Number(input.value) * 1000;
-        document.getElementById("BBB2").value = Number(input.value) * 100;
-        document.getElementById("BBB4").value = Number(input.value) / 1000;
-    }
-if(bango == 4){
-        document.getElementById("BBB1").value = Number(input.value) * 1000000;
-        document.getElementById("BBB2").value = Number(input.value) * 100000;
-        document.getElementById("BBB3").value = Number(input.value) * 1000;
-    }
-
-
-
-
+        // (input.value) 入力したもの
+        if (bango == 1){
+            document.getElementById("BBB2").value = Number(input.value) / 10;
+            document.getElementById("BBB3").value = Number(input.value) / 1000;
+            document.getElementById("BBB4").value = Number(input.value) / 1000000;
+        }
+        if(bango == 2){
+            document.getElementById("BBB1").value = Number(input.value) * 10;
+            document.getElementById("BBB3").value = Number(input.value) / 100;
+            document.getElementById("BBB4").value = Number(input.value) / 100000;
+        }
+        if(bango == 3){
+            document.getElementById("BBB1").value = Number(input.value) * 1000;
+            document.getElementById("BBB2").value = Number(input.value) * 100;
+            document.getElementById("BBB4").value = Number(input.value) / 1000;
+        }
+        if(bango == 4){
+            document.getElementById("BBB1").value = Number(input.value) * 1000000;
+            document.getElementById("BBB2").value = Number(input.value) * 100000;
+            document.getElementById("BBB3").value = Number(input.value) * 1000;
+        }
     }
 </script>
 
