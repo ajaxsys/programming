@@ -1,0 +1,133 @@
+<style>
+    td {
+        height: 50px;
+        width: 50px;
+    }
+
+    .clickA {
+        background-color: red;
+    }
+    
+    .clickB {
+        background-color: blue;
+    }
+</style>
+<h1>ビンゴゲーム</h1>
+
+<h2>いまはだれ: <span id="dare"></span></h2>
+
+<table border="1">
+    <tr>
+        <td id="id11" onclick="play(this)"></td>
+        <td id="id12" onclick="play(this)"></td>
+        <td id="id13" onclick="play(this)"></td>
+    </tr>
+    <tr>
+        <td id="id21" onclick="play(this)"></td>
+        <td id="id22" onclick="play(this)"></td>
+        <td id="id23" onclick="play(this)"></td>
+    </tr>
+    <tr>
+        <td id="id31" onclick="play(this)"></td>
+        <td id="id32" onclick="play(this)"></td>
+        <td id="id33" onclick="play(this)"></td>
+    </tr>
+
+
+</table>
+
+<script>
+    var imaHaDare = ""
+    var gameOver = false;
+
+    dareGaSaki()
+    function dareGaSaki() {
+        var ransu = Math.random();
+        if (ransu < 0.5) {
+            imaHaDare = "A";
+        } else {
+            imaHaDare = "B";
+        }
+    }
+
+    function play(tdThis) {
+        if (gameOver == true) {
+            alert("Game over");
+            return;
+        }
+        
+        colorChange(tdThis)
+        showImaHaDare();
+        dareGaKati();
+    }
+    function colorChange(tdThis) {
+        if (
+            tdThis.classList.contains("clickA") || 
+            tdThis.classList.contains("clickB") ) 
+            {
+                return;
+            }
+
+        if (imaHaDare == "A") {
+            tdThis.classList.add("clickA")
+            imaHaDare = "B"
+        } else {
+           tdThis.classList.add("clickB")
+           imaHaDare = "A"
+        }
+
+    }
+
+    showImaHaDare();
+    function showImaHaDare() {
+
+        if (imaHaDare == "A") {
+            document.getElementById("dare").innerHTML = ("しおちゃん")
+        } else {
+            document.getElementById("dare").innerHTML = ("しえんちゃん")
+        }
+    }
+
+    function dareGaKati() {
+        // rule kime
+        if (zenbuOnaji("id11", "id12", "id13") || // ---
+            zenbuOnaji("id21", "id22", "id23") ||
+            zenbuOnaji("id31", "id32", "id33") ||
+
+            zenbuOnaji("id11", "id22", "id33") || // x
+            zenbuOnaji("id13", "id22", "id31") ||
+
+            zenbuOnaji("id11", "id21", "id31") || // |||
+            zenbuOnaji("id12", "id22", "id32") ||
+            zenbuOnaji("id13", "id23", "id33") 
+            
+            ) {
+
+            gameOver = true;
+
+            if (imaHaDare == "B") {
+                alert ("おめでとう、しおちゃん勝ちです！") // A kati
+               
+            } else {
+                alert ("おめでとう、しえんちゃん勝ちです！")
+            }
+        }
+    }
+
+    function zenbuOnaji(id1, id2, id3) {
+        var color1 = document.getElementById(id1).classList[0];
+        var color2 = document.getElementById(id2).classList[0];
+        var color3 = document.getElementById(id3).classList[0];
+
+        if (!color1) {
+            return false; // dare demo katanai
+        }
+        
+        if (color1 == color2 && color2 == color3) {
+            return true;
+        } else {
+            return false; // onaji jyanai
+        }
+    }
+
+</script>
