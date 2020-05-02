@@ -1,34 +1,73 @@
 <a href="2.html">もとに戻る</a>
 <style>
     table {
-        height: 200px;
-        width: 200px;
+        height: 500px;
+        width: 500px;
     }
     .clickA{
-        background-color: red;
+        background-color: plum;
     }
     .clickB{
         background-color: aquamarine;
     }
      </style>
-<h1>ビンゴゲーム</h1>
+<h1>ビンゴゲーム〜勝負だ〜</h1>
+<h2>いまは？ <span id="dare"></span></h2>
 <table border="1">
     <tr>
-        <td onclik="colorChange(this)"></td>
-        <td onclik="colorChange(this)"></td>
-        <td onclik="colorChange(this)"></td>
+        <td id="id11" onclick="play(this)"></td>
+        <td id="id12" onclick="play(this)"></td>
+        <td id="id13" onclick="play(this)"></td>
     </tr>
     <tr>
-        <td onclik="colorChange(this)"></td>
-        <td onclik="colorChange(this)"></td>
-        <td onclik="colorChange(this)"></td>
+        <td id="id21" onclick="play(this)"></td>
+        <td id="id22" onclick="play(this)"></td>
+        <td id="id23" onclick="play(this)"></td>
     </tr>
     <tr>
-        <td onclik="colorChange(this)"></td>
-        <td onclik="colorChange(this)"></td>
-        <td onclik="colorChange(this)"></td>
+        <td id="id31" onclick="play(this)"></td>
+        <td id="id32" onclick="play(this)"></td>
+        <td id="id33" onclick="play(this)"></td>
     </tr>
 </table>
 <script>
+    var imaha = "";
 
+    dareGasaki()
+    showImaha()
+
+    function dareGasaki() {
+        var ransu = Math.random();
+        if (ransu < 0.5){
+            imaha = "A";
+        } else{
+            imaha = "B";
+        }
+    }
+
+    function play(tdthis){
+        // 手順２
+        colorChange(tdthis)
+        // 3
+        showImaha();
+
+    }
+    function colorChange(tdthis){
+        if (imaha == "A"){
+            tdthis.classList.add("clickA")
+            imaha = "B"
+        }else{
+            tdthis.classList.add("clickB")
+            imaha = "A"
+        }
+    }
+    function showImaha(){
+
+        if (imaha == "A"){
+            document.getElementById("dare").innerHTML = "ぷっぷちゃん"
+
+        } else {
+            document.getElementById("dare").innerHTML = "ほくろうちゃん"
+        }
+    }
 </script>
