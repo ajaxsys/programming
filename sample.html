@@ -1,0 +1,57 @@
+<h1>h1</h1>
+<br>
+<h2>h2</h2>
+<hr>
+
+<a href="http://google.com">google</a>
+
+<table border="1">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+</table>
+
+<button onclick="shienFunc('1クリックされた')">button 1</button>
+<button onclick="shienFunc('2222')">button 2</button>
+
+<button onclick="shioFunc(100)">button 3</button>
+<button onclick="shioFunc(200)">button 4</button>
+<button onclick="shioFunc(100000)">button 5</button>
+
+
+<!-- 上は画面の作り方 -->
+
+<!-- 下は画面を動かせる（プログラミング） -->
+<script>
+
+    function shienFunc(nanika) {
+        if (nanika == '2222') {
+            alert(nanika + "2です")
+        } else {
+            alert(nanika + "他です")
+        }
+    }
+
+    // 5 => 1 + 2 + 3 + 4 + 5
+    // 100 => 1 + 2 + 3 + 4 + 5 + ..... + 100 = 5050
+    function shioFunc(回数) {
+        let 合計 = 0
+        for (let i = 0; i < 回数; i++) {
+            合計 = 合計 + i + 1
+        }
+        alert(合計);
+    }
+
+    // while
+
+</script>
+
